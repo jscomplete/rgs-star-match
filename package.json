@@ -1,0 +1,72 @@
+{
+  "name": "star-match",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "eslint": "eslint \"src/**/*.js\"",
+    "format": "prettier-eslint \"src/**/*.js\" \"src/**/*.scss\" --write",
+    "start": "concurrently \"npm run dev-server\" \"npm run dev-bundle\"",
+    "test": "jest",
+    "dev-server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore .reactful.json --ignore public/",
+    "dev-bundle": "webpack -wd",
+    "verify-tests": "jest --coverage",
+    "build-react": "cross-env NODE_ENV=production webpack --progress -p",
+    "build-node": "babel src -d build --config-file ./babel-node.config.js --copy-files",
+    "build-all": "npm install && npm run build-react && npm run build-node",
+    "prod-start": "cross-env NODE_ENV=production NODE_PATH=./build pm2 start -i max build/server/server.js --update-env --name star-matchProd",
+    "prod-stop": "pm2 stop star-matchProd",
+    "prod-reload": "pm2 reload --update-env star-matchProd",
+    "prod-logs": "pm2 logs --update-env star-matchProd"
+  },
+  "jest": {
+    "modulePaths": [
+      "./src"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mini-css-extract-plugin": "^0.5.0",
+    "morgan": "^1.9.1",
+    "node-sass": "^4.11.0",
+    "pm2": "^3.2.9",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "regenerator-runtime": "^0.13.1",
+    "sass-loader": "^7.1.0",
+    "serialize-javascript": "^1.6.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-chunk-hash": "^0.6.0",
+    "webpack-cli": "^3.2.3"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.2.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "concurrently": "^4.1.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.0.1",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "prettier-eslint-cli": "^4.7.1",
+    "react-test-renderer": "^16.8.1",
+    "reactful": "^2.0.0"
+  }
+}
