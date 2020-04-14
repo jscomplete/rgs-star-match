@@ -1,20 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
-<div>
-  <h1>
-    TEST
-  </h1>
-  This is a sample stateful and server-side rendered React application.
-  <br />
-  <br />
-  Here is a button that will track how many times you click it:
-  <br />
-  <br />
-  <button
-    onClick={[Function]}
+<div
+  className="game"
+>
+  <div
+    className="help"
   >
-    0
-  </button>
+    Pick 1 or more numbers that sum to the number of stars
+  </div>
+  <div
+    className="body"
+  >
+    <div
+      className="left"
+    >
+      <div
+        className="star"
+      />
+      <div
+        className="star"
+      />
+      <div
+        className="star"
+      />
+      <div
+        className="star"
+      />
+    </div>
+    <div
+      className="right"
+    >
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        1
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        2
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        3
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        4
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        5
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        6
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        7
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        8
+      </button>
+      <button
+        className="number"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "lightgray",
+          }
+        }
+      >
+        9
+      </button>
+    </div>
+  </div>
+  <div
+    className="timer"
+  >
+    Time Remaining: 
+    10
+  </div>
 </div>
 `;

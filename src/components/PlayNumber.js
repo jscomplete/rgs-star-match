@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const PlayNumber = props => (
+const PlayNumber = (props) => (
   <button
     className="number"
     style={{ backgroundColor: colors[props.status] }}
@@ -12,10 +12,10 @@ const PlayNumber = props => (
 
 // Color Theme
 const colors = {
-  available: "lightgray",
-  used: "lightgreen",
-  wrong: "lightcoral",
-  candidate: "deepskyblue",
+  available: 'lightgray',
+  used: 'lightgreen',
+  wrong: 'lightcoral',
+  candidate: 'deepskyblue',
 };
 
 export default PlayNumber;

@@ -32,7 +32,7 @@
 }
 
 .star:after {
-  content: "\2605";
+  content: '\2605';
   font-size: 45px;
 }
 
