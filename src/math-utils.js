@@ -6,7 +6,7 @@ const utils = {
   range: (min, max) => Array.from({ length: max - min + 1 }, (_, i) => min + i),
 
   // pick a random number between min and max (edges included)
-  random: (min, max) => min + Math.floor(max * Math.random()),
+  random: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
 
   // Given an array of numbers and a max...
   // Pick a random sum (< max) from the set of all available sums in arr
@@ -23,7 +23,7 @@ const utils = {
         }
       }
     }
-    return sums[utils.random(0, sums.length)];
+    return sums[utils.random(0, sums.length - 1)];
   },
 };
 
